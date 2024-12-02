@@ -1,5 +1,6 @@
 import React from "react";
 import "./Paymentcomplete.css";
+import { Link } from 'react-router-dom';
 
 function Paymentcomplete() {
   return (
@@ -23,13 +24,15 @@ function Paymentcomplete() {
           />
       </div>
       <div className="complete-button-container">
-        <button type="complete" className="complete-button">
+        <Link to={'/main'}>  
+          <button type="complete" className="complete-button">
               <img
                 src={`${process.env.PUBLIC_URL}/버튼.png`}
                 alt="완료"
                 className="complete-image"
               />
             </button>
+          </Link>
       </div>
       {/* <div className="payment-image-container">
         <Link to={'/paymentcomplete'}>
