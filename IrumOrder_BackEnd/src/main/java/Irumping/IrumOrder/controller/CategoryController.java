@@ -10,6 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin(origins = "http://localhost:3000") // 프론트엔드 주소로 변경
 @RequestMapping("/category")
 public class CategoryController {
 
@@ -44,7 +45,8 @@ public class CategoryController {
      *
      * @return ResponseEntity.ok(categories)
      */
-    @GetMapping("/getAllCategory")
+//    @GetMapping("/getAllCategory")
+    @GetMapping("/api/categories")
     public ResponseEntity<List<CategoryEntity>> getAllCategory() {
         List<CategoryEntity> categories = categoryService.findAll();  // 전체 카테고리 조회
         return ResponseEntity.ok(categories);  // List<CategoryEntity>를 JSON 형식으로 반환
