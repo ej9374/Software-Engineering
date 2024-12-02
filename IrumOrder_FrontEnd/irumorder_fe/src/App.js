@@ -1,5 +1,8 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
+import Cart from './routes/Cart';
+import Payment from './routes/Payment';
+import Paymentcomplete from './routes/Paymentcomplete';
 import Signup from "./routes/user registration/Signup";
 import Login from "./routes/user management/Login";
 import Main from "./routes/Main";
@@ -22,10 +25,12 @@ function App() {
           <Route path="/past-order" element={<PastOrder />} />
           <Route path="/routine/:id" element={<RoutineDetail />} />
           <Route path="/routine/new" element={<RoutineDetail />} />
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/payment" element={<Payment/>}/>
+          <Route path="/paymentcomplete" element={<Paymentcomplete/>}/>
         </Routes>
       </HashRouter>
     </RoutineProvider>
   );
 }
-
 export default App;
