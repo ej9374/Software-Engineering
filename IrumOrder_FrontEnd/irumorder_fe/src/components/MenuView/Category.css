@@ -1,10 +1,12 @@
 .Category {
     display: flex;
     align-items: center;
+    margin-top: 200px;
     justify-content: space-between;
     padding: 10px 20px;
     overflow-x: auto; /* 수평 스크롤 가능 */
     border-bottom: 3px solid #ddd;
+    
 }
 
 .button {

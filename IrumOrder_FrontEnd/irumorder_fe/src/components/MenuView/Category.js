@@ -1,4 +1,3 @@
-// src/components/Category.js
 import React, { useEffect, useState } from 'react';
 import './Category.css';
 
@@ -9,9 +8,12 @@ const Category = () => {
         // API 호출
         const fetchCategories = async () => {
             try {
-                const response = await fetch('http://localhost:8080/category/api/categories'); // 백엔드 URL
+                const response = await fetch('http://localhost:8080/category/getAllCategory'); // 백엔드 URL
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
                 const data = await response.json();
-                setCategories(data);
+                setCategories(data); // 데이터를 상태에 저장
             } catch (error) {
                 console.error("Failed to fetch categories:", error);
             }
@@ -23,8 +25,8 @@ const Category = () => {
     return (
         <div className="Category">
             {categories.map((category, index) => (
-                <button key={index} className="button">
-                    {category.name} {/* 카테고리 이름 */}
+                <button key={index} className={`button ${index === 0 ? 'selected' : ''}`}>
+                    {category.name}
                 </button>
             ))}
         </div>
