@@ -1,0 +1,135 @@
+import React, { useState, useEffect, useContext } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import RoutineContext from "../../context/RoutineContext";
+import "./RoutineDetail.css";
+
+const RoutineDetail = () => {
+  const { id } = useParams();
+  const { routines, setRoutines } = useContext(RoutineContext);
+  const navigate = useNavigate();
+  const [routine, setRoutine] = useState({
+    time: "",
+    days: [],
+    menu: "",
+    store: "",
+  });
+
+  useEffect(() => {
+    if (id && routines) {
+      const existingRoutine = routines.find((routine) => routine.routineId === parseInt(id));
+      if (existingRoutine) {
+        setRoutine(existingRoutine);
+      }
+    }
+  }, [id, routines]);
+
+  const handleChange = (key, value) => {
+    setRoutine({ ...routine, [key]: value });
+  };
+
+  const handleDayToggle = (day) => {
+    setRoutine((prev) => ({
+      ...prev,
+      days: prev.days.includes(day)
+        ? prev.days.filter((d) => d !== day)
+        : [...prev.days, day],
+    }));
+  };
+
+  const saveRoutineToServer = async (routineData) => {
+    try {
+      const method = id ? "PUT" : "POST";
+      const endpoint = id
+        ? `http://localhost:8080/api/users/${routineData.userId}/routines/${id}`
+        : `http://localhost:8080/api/users/${routineData.userId}/routines/add`;
+
+      const response = await fetch(endpoint, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(routineData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP 오류: ${response.status}`);
+      }
+
+      const updatedRoutine = await response.json();
+
+      setRoutines((prev) =>
+        method === "PUT"
+          ? prev.map((r) => (r.routineId === updatedRoutine.routineId ? updatedRoutine : r))
+          : [...prev, updatedRoutine]
+      );
+
+      navigate("/routinelist");
+    } catch (error) {
+      console.error("루틴 저장 중 오류 발생:", error);
+    }
+  };
+
+  const handleSave = () => {
+    const userId = routines?.[0]?.userId || 1;
+    const routineData = {
+      ...routine,
+      userId,
+      routineTime: routine.time,
+      routineDay: routine.days,
+    };
+    saveRoutineToServer(routineData);
+  };
+
+  const handleCancel = () => {
+    navigate("/routinelist");
+  };
+
+  if (!routine) {
+    return <p>로딩 중...</p>;
+  }
+
+  return (
+    <div className="container">
+      <h1>{id ? "루틴 수정" : "새 루틴 추가"}</h1>
+      <div className="time-section">
+        <label htmlFor="time">시간:</label>
+        <input
+          id="time"
+          type="time"
+          value={routine.time}
+          onChange={(e) => handleChange("time", e.target.value)}
+        />
+      </div>
+      <div className="days-container">
+        {["월", "화", "수", "목", "금"].map((day) => (
+          <button
+            key={day}
+            className={`day-button ${routine.days.includes(day) ? "active" : ""}`}
+            onClick={() => handleDayToggle(day)}
+          >
+            {day}
+          </button>
+        ))}
+      </div>
+      <div className="store-button-container">
+        {["전농관", "학생회관"].map((store) => (
+          <button
+            key={store}
+            className={`store-button ${routine.store === store ? "active" : ""}`}
+            onClick={() => handleChange("store", store)}
+          >
+            {store}
+          </button>
+        ))}
+      </div>
+      <div className="action-buttons">
+        <button className="cancel-button" onClick={handleCancel}>
+          취소
+        </button>
+        <button className="save-button" onClick={handleSave}>
+          저장
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default RoutineDetail;
