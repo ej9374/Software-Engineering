@@ -9,7 +9,7 @@ const Category = () => {
         // API 호출
         const fetchCategories = async () => {
             try {
-                const response = await fetch('http://localhost:8080/category/getAllcategory'); // 백엔드 URL
+                const response = await fetch('http://localhost:8080/category/getAllCategory'); // 백엔드 URL
                 const data = await response.json();
                 setCategories(data);
             } catch (error) {
