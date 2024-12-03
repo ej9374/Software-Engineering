@@ -35,6 +35,9 @@ public class RoutineResponseDto {
     @Schema(description = "메뉴 세부 정보 ID", example = "5")
     private Integer menuDetailId;
 
+//    @Schema(description = "메뉴 세부 정보 옵션", example = "add shot, light")
+//    private String menuDetailName;
+
     @Schema(description = "루틴이 실행될 요일", example = "MONDAY")
     private RoutineDay routineDay;
 
@@ -55,6 +58,7 @@ public class RoutineResponseDto {
         this.menuId = entity.getMenuId();
         this.menuName = menu;
         this.menuDetailId = entity.getMenuDetailId();
+//        this.menuDetailName = menuDetailName;
         this.routineDay = entity.getRoutineDay();
         this.routineTime = entity.getRoutineTime();
         this.isActivated = entity.getAlarmEnabled();
