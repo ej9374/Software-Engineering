@@ -43,7 +43,7 @@ public class MenuController {
             @ApiResponse(responseCode = "404", description = "메뉴를 찾을 수 없음")
     })
     @DeleteMapping("/deleteMenu")
-    public ResponseEntity<String> deleteMenu(@Parameter(description = "삭제할 메뉴의 ID", required = true) @RequestParam Long menuId) {
+    public ResponseEntity<String> deleteMenu(@Parameter(name = "menuId", description = "삭제할 메뉴의 ID", required = true) @RequestParam Long menuId) {
         menuService.deleteMenu(menuId);
         return ResponseEntity.ok("메뉴 삭제 완료");
     }
@@ -59,7 +59,7 @@ public class MenuController {
     )
     @GetMapping("/getMenu")
     public ResponseEntity<List<MenuEntity>> getMenu(
-            @Parameter(description = "조회할 메뉴의 ID", example = "1")
+            @Parameter(name = "categoryId", description = "조회할 메뉴의 ID", example = "1")
             @RequestParam Long categoryId) {
         List<MenuEntity> menus = (List<MenuEntity>) menuService.findMenuByCategory(categoryId);
         return ResponseEntity.ok(menus);

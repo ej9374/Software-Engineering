@@ -41,7 +41,7 @@ public class CategoryController {
     )
     @PostMapping("/createCategory")
     public ResponseEntity<String> createCategory(
-            @Parameter(description = "추가할 카테고리 이름", example = "Electronics")
+            @Parameter(name = "category", description = "추가할 카테고리 이름", example = "Electronics")
             @RequestParam String category) {
         categoryService.createCategory(category);
         return ResponseEntity.ok("카테고리 추가 완료");
@@ -65,7 +65,7 @@ public class CategoryController {
     )
     @DeleteMapping("/deleteCategory")
     public ResponseEntity<String> deleteCategory(
-            @Parameter(description = "삭제할 카테고리의 ID", example = "1")
+            @Parameter(name = "categoryId", description = "삭제할 카테고리의 ID", example = "1")
             @RequestParam Long categoryId) {
         categoryService.deleteCategory(categoryId);
         return ResponseEntity.ok("카테고리 삭제 완료");
@@ -109,7 +109,7 @@ public class CategoryController {
     )
     @GetMapping("/getCategory")
     public ResponseEntity<CategoryEntity> getCategory(
-            @Parameter(description = "조회할 카테고리의 ID", example = "1")
+            @Parameter(name = "categoryId", description = "조회할 카테고리의 ID", example = "1")
             @RequestParam Long categoryId) {
         CategoryEntity category = categoryService.findCategoryById(categoryId);
         return ResponseEntity.ok(category);

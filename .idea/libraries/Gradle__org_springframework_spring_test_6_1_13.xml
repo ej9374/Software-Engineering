@@ -2,9 +2,13 @@
   <library name="Gradle: org.springframework:spring-test:6.1.13" type="java-imported" external-system-id="GRADLE">
     <properties groupId="org.springframework" artifactId="spring-test" version="6.1.13" baseVersion="6.1.13" />
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../gradle-8.11.1-bin/gradle-8.11.1/bin/caches/modules-2/files-2.1/org.springframework/spring-test/6.1.13/9f0038d672a513ddc201296922da13b1212dd0f7/spring-test-6.1.13.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/6.1.13/9f0038d672a513ddc201296922da13b1212dd0f7/spring-test-6.1.13.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/6.1.13/751bd49d8e8e7f257a045c2c2d463746440063f/spring-test-6.1.13-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/6.1.13/ebcc78f0f7b43c391d0b485028ea39057c68ed1e/spring-test-6.1.13-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
