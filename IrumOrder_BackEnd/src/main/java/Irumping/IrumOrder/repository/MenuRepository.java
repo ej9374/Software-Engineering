@@ -10,5 +10,5 @@ public interface MenuRepository extends JpaRepository<MenuEntity, Integer> {
     Optional<MenuEntity> findByName(String name);
 
     // 카테고리에 따라 검색
-    List<MenuEntity> findByCategoryId(int categoryId);
+    List<MenuEntity> findByCategoryId(Integer categoryId);
 }

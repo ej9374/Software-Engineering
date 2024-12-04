@@ -98,7 +98,7 @@ public class PayService {
             log.info("결제 승인 성공: Response={}", approveResponse);
 
             assert approveResponse != null;
-            OrderEntity order = payRepository.findByOrderIdAndUserId(Integer.parseInt(approveResponse.getPartner_order_id()), Long.parseLong(approveResponse.getPartner_user_id()));
+            OrderEntity order = payRepository.findByOrderIdAndUserId(Integer.parseInt(approveResponse.getPartner_order_id()), Integer.parseInt(approveResponse.getPartner_user_id()));
             order.setPayment(LocalDateTime.parse(approveResponse.getApproved_at()));
             payRepository.save(order);
             return approveResponse;
@@ -142,7 +142,7 @@ public class PayService {
      * @param tid, pgToken, user_id, order_id 사용자의 결제 준비 요청 정보 (tid, 주문 ID, 사용자 ID 등 포함)
      * @return Map<String, String> 정보를 string 형태로 만든 값
      */
-    private HttpEntity<Map<String, String>> getParamsForApprove(String tid, String pgToken, long user_id, int order_id) {
+    private HttpEntity<Map<String, String>> getParamsForApprove(String tid, String pgToken, Integer user_id, Integer order_id) {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("cid", "TC0ONETIME");              // 가맹점 코드(테스트용)
         parameters.put("tid", tid);                       // 결제 고유번호
@@ -176,7 +176,7 @@ public class PayService {
      * @param tid, user_id, order_id
      * @throws IllegalArgumentException 존재하지 않는 주문일 경우 발생하는 오류
      */
-    public void saveTransaction(int orderId, Integer userId, String tid){
+    public void saveTransaction(Integer orderId, Integer userId, String tid){
         Optional<OrderEntity> optionalOrder = Optional.ofNullable(
                 payRepository.findByOrderIdAndUserId(orderId, userId)
         );
@@ -194,7 +194,7 @@ public class PayService {
      *
      * @param userId, orderId
      */
-    public String getTransactionTid(Integer userId, int orderId) {
+    public String getTransactionTid(Integer userId, Integer orderId) {
         OrderEntity order = payRepository.findByOrderIdAndUserId(orderId,userId);
         return order.getTid();
     }
@@ -205,7 +205,7 @@ public class PayService {
      *
      * @param userId, orderId
      */
-    public boolean isUserValid(long userId, int orderId) {
+    public boolean isUserValid(Integer userId, Integer orderId) {
         OrderEntity order = payRepository.findByOrderIdAndUserId(orderId, userId);
         return order == null; // 주문 정보가 있다면 유효
     }

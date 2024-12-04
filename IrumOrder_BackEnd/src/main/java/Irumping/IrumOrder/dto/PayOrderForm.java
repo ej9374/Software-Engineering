@@ -25,14 +25,14 @@ public class PayOrderForm {
     private String item_name;
 
     @Schema(example = "2", description = "Quantity of the product")
-    private int quantity;
+    private Integer quantity;
 
     @Positive
     @NotNull
     @Schema(example = "20000", description = "Total price of the product")
-    private int totalPrice;
+    private Integer totalPrice;
 
     @Schema(example = "0", description = "Tax-free amount")
-    private int tax_free_amount;
+    private Integer tax_free_amount;
 
 }

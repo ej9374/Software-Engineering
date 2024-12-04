@@ -17,7 +17,7 @@ public class PayApproveRequest {
     private Integer userId;
 
     @Schema(description = "Order ID", example = "1001")
-    private int orderId;
+    private Integer orderId;
 
     @Schema(description = "Merchant Code (Test)", example = "TC0ONETIME")
     private String cid;

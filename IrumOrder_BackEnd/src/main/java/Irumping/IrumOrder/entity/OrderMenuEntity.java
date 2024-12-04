@@ -29,11 +29,11 @@ public class OrderMenuEntity {
     private MenuDetailEntity menuDetail;
 
     @Column(name = "quantity", nullable = false)
-    private int quantity = 1;
+    private Integer quantity = 1;
 
     public OrderMenuEntity() {}
 
-    public OrderMenuEntity(OrderEntity order, MenuEntity menu, MenuDetailEntity menuDetail, int quantity) {
+    public OrderMenuEntity(OrderEntity order, MenuEntity menu, MenuDetailEntity menuDetail, Integer quantity) {
         this.order = order;
         this.menu = menu;
         this.menuDetail = menuDetail;

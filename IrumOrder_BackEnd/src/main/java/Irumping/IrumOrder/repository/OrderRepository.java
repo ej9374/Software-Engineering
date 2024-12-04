@@ -8,7 +8,7 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<OrderEntity, Integer> {
 
     // 특정 유저의 주문 내역 조회
-    List<OrderEntity> findByUserId(int userId);
+    List<OrderEntity> findByUserId(Integer userId);
 
     // 특정 주문 상태와 픽업 시간이 NULL인 주문 조회 (픽업 예약을 하지 않은 상태의 주문만 조회)
 //    List<OrderEntity> findByPickUpIsNullAndOrderStatus(String orderStatus);

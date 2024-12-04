@@ -13,10 +13,10 @@ import java.util.List;
 public class OrderRequestDto {
 
     @Schema(example="1")
-    private int userId;
+    private Integer userId;
 
     @Schema(example="3200")
-    private int totalPrice;
+    private Integer totalPrice;
 
     @Schema(example="01:20")
     private LocalTime pickUp;
