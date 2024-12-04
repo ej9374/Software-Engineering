@@ -22,11 +22,14 @@ public class CategoryController {
      * @param category 카테고리 이름
      * @return ResponseEntity.ok("카테고리 추가 완료")
      */
+
+
     @PostMapping("/createCategory")
-    public ResponseEntity<String> createCategory(String category) {
+    public ResponseEntity<String> createCategory(@RequestBody String category) {
         categoryService.createCategory(category);
         return ResponseEntity.ok("카테고리 추가 완료");
     }
+
 
     /**
      * 카테고리 ID로 카테고리 삭제
@@ -35,10 +38,11 @@ public class CategoryController {
      * @return ResponseEntity.ok("카테고리 삭제 완료")
      */
     @DeleteMapping("/deleteCategory")
-    public ResponseEntity<String> deleteCategory(Long categoryId) {
+    public ResponseEntity<String> deleteCategory(@RequestParam("categoryId") Long categoryId) {
         categoryService.deleteCategory(categoryId);
         return ResponseEntity.ok("카테고리 삭제 완료");
     }
+
 
     /**
      * 전체 카테고리 조회
