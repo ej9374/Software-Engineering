@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fffef274-2bad-4227-896b-01d6b2af0169" name="Changes" comment="chore: 메뉴 정보 불러오기 변경&#10;&#10;issue #5">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="fffef274-2bad-4227-896b-01d6b2af0169" name="Changes" comment="ci: build.gradle에 -parameter 추가&#10;&#10;&#10;issue #5">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e42e842-e216-40c5-bc92-1c8b1eaa7f25.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e42e842-e216-40c5-bc92-1c8b1eaa7f25.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa5ed43d-1a08-4f6c-9c92-c9f51f437c73.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aa5ed43d-1a08-4f6c-9c92-c9f51f437c73.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8891b85-f54a-4dd7-b071-f64a98dbc5f3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8891b85-f54a-4dd7-b071-f64a98dbc5f3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +96,7 @@
     &quot;Docker.IrumOrder_BackEnd/Dockerfile.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Build IrumOrder_BackEnd.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.IrumOrder_BackEnd [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IrumOrder_BackEnd.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RoutineControllerTest (1).executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RoutineControllerTest.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RoutineControllerTest.testCreateRoutine.executor&quot;: &quot;Run&quot;,
@@ -226,17 +230,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="IrumOrder" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="IrumOrder" />
-      <option name="filePath" />
-      <method v="2" />
     </configuration>
     <configuration name="IrumOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="IrumOrder.main" />
@@ -380,14 +373,7 @@
       <workItem from="1733128001988" duration="1233000" />
       <workItem from="1733129414016" duration="14253000" />
       <workItem from="1733192158064" duration="3166000" />
-    </task>
-    <task id="LOCAL-00010" summary="refactor: 수정&#10;&#10;메소드 입출력 수정&#10;&#10;issue #3">
-      <option name="closed" value="true" />
-      <created>1731494723671</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1731494723671</updated>
+      <workItem from="1733318766383" duration="46000" />
     </task>
     <task id="LOCAL-00011" summary="feat: 루틴 저장 틀 구현&#10;&#10;전체적인 흐름 보기용으로 틀만 만들었음. 세부적인 내용 추가 필요&#10;&#10;issue #5">
       <option name="closed" value="true" />
@@ -773,7 +759,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733196513051</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="ci: build.gradle에 -parameter 추가&#10;&#10;&#10;issue #5">
+      <option name="closed" value="true" />
+      <created>1733278819985</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1733278819985</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -791,7 +785,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: exception 및 관리자 확인 기능 추가&#10;&#10;&#10;issue #6" />
     <MESSAGE value="chore: unused import statement 삭제 &#10;&#10;issue #6" />
     <MESSAGE value="refactor: 코드 정리&#10;&#10;routineService에서 반복되는 null 확인을 optional을 이용하여 단순화, api return값을 RoutineResponseDto를 이용함. &#10;&#10;issue #5" />
     <MESSAGE value="refactor: exception 코드 정리 &#10;&#10;custom exceptions끼리 묶음. &#10;구조화하기 위해 apiError 만듦&#10;&#10;issue #5" />
@@ -816,7 +809,8 @@
     <MESSAGE value="feat: menu name도 반환하게 수정&#10;&#10;전체 코드에서 menu name도 반환하도록 수정&#10;&#10;issue #5" />
     <MESSAGE value="chore: unused statment 삭제 &#10;&#10;issue #5" />
     <MESSAGE value="chore: 메뉴 정보 불러오기 변경&#10;&#10;issue #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: 메뉴 정보 불러오기 변경&#10;&#10;issue #5" />
+    <MESSAGE value="ci: build.gradle에 -parameter 추가&#10;&#10;&#10;issue #5" />
+    <option name="LAST_COMMIT_MESSAGE" value="ci: build.gradle에 -parameter 추가&#10;&#10;&#10;issue #5" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
