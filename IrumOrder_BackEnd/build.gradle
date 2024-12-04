@@ -54,3 +54,7 @@ tasks.named('bootJar') {
 	enabled = true
 }
 
+tasks.withType(JavaCompile) {
+	options.compilerArgs << '-parameters'
+}
+

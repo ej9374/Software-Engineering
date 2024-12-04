@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fffef274-2bad-4227-896b-01d6b2af0169" name="Changes" comment="chore: 메뉴 정보 불러오기 변경&#10;&#10;issue #5" />
+    <list default="true" id="fffef274-2bad-4227-896b-01d6b2af0169" name="Changes" comment="chore: 메뉴 정보 불러오기 변경&#10;&#10;issue #5">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,61 +87,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker.IrumOrder_BackEnd/Dockerfile.executor": "Run",
-    "Gradle.Build IrumOrder_BackEnd.executor": "Run",
-    "Gradle.IrumOrder_BackEnd [dependencies].executor": "Run",
-    "Gradle.RoutineControllerTest (1).executor": "Run",
-    "Gradle.RoutineControllerTest.executor": "Run",
-    "Gradle.RoutineControllerTest.testCreateRoutine.executor": "Run",
-    "Gradle.RoutineControllerTest.testCreateRoutineSuccess.executor": "Run",
-    "JUnit.PayControllerTest.payCompleted.executor": "Run",
-    "JUnit.PayControllerTest.payReady.executor": "Run",
-    "JUnit.PayControllerTest.testT06_1_SelectPaymentMethod.executor": "Run",
-    "JUnit.PayControllerTest.testT06_2_ValidPaymentDetails.executor": "Run",
-    "JUnit.RoutineControllerTest.executor": "Run",
-    "JUnit.RoutineControllerTest.testCreateRoutineMissingFields.executor": "Run",
-    "JUnit.RoutineControllerTest.testCreateRoutineSuccess.executor": "Run",
-    "JUnit.RoutineControllerTest.testDeleteRoutineSuccess.executor": "Run",
-    "JUnit.RoutineControllerTest.testToggleRoutineActivation.executor": "Run",
-    "JUnit.RoutineControllerTest.testUpdateRoutineSuccess.executor": "Run",
-    "JUnit.SalesControllerTest.executor": "Run",
-    "JUnit.SalesControllerTest.testGetYesterdaySales_UnauthorizedUser.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.IrumOrderApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "feat/routine-setting",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/goofy/Desktop/empty/2024-02/Software-Engineering",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "232dce5fe7d2f4bb528de8713725035e",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.IrumOrder_BackEnd/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build IrumOrder_BackEnd.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.IrumOrder_BackEnd [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoutineControllerTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoutineControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoutineControllerTest.testCreateRoutine.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoutineControllerTest.testCreateRoutineSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayControllerTest.payCompleted.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayControllerTest.payReady.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayControllerTest.testT06_1_SelectPaymentMethod.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PayControllerTest.testT06_2_ValidPaymentDetails.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoutineControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoutineControllerTest.testCreateRoutineMissingFields.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoutineControllerTest.testCreateRoutineSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoutineControllerTest.testDeleteRoutineSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoutineControllerTest.testToggleRoutineActivation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoutineControllerTest.testUpdateRoutineSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SalesControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SalesControllerTest.testGetYesterdaySales_UnauthorizedUser.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.IrumOrderApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/routine-setting&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/goofy/Desktop/empty/2024-02/Software-Engineering&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;232dce5fe7d2f4bb528de8713725035e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\goofy\Desktop\empty\2024-02\Software-Engineering\IrumOrder_BackEnd\src\main\resources\static\templates" />
@@ -224,6 +226,17 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="IrumOrder" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="IrumOrder" />
+      <option name="filePath" />
+      <method v="2" />
     </configuration>
     <configuration name="IrumOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="IrumOrder.main" />
