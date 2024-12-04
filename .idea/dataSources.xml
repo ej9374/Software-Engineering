@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="irum_order@localhost" uuid="7a284807-1f74-41a7-a427-466821d9f9d6">
+    <data-source source="LOCAL" name="irum_order@localhost" uuid="95023495-79f6-4dc0-af4c-6b3944ca2fe0">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
