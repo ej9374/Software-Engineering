@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * 클래스 설명: 메뉴 관련 API를 제공하는 컨트롤러
+ * 메뉴 추가, 삭제, 조회 기능을 제공
+ *
+ * 작성자: 주영은
+ * 마지막 수정일: 2024-12-04
+ */
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/menu")
@@ -21,6 +28,12 @@ public class MenuController {
 
     private final MenuService menuService;
 
+    /**
+     * 메뉴 추가하는 메소드
+     *
+     * @param menuRequest 추가할 메뉴의 정보
+     * @return ResponseEntity.ok("메뉴 추가 완료")
+     */
     @Operation(
             summary = "메뉴 생성",
             description = "새로운 메뉴를 생성합니다.",
@@ -37,18 +50,31 @@ public class MenuController {
         return ResponseEntity.ok("메뉴 추가 완료");
     }
 
+    /**
+     * 메뉴 삭제
+     * 메뉴 ID로 메뉴를 삭제
+     *
+     * @param menuId 삭제할 메뉴의 ID
+     * @return ResponseEntity.ok("메뉴 삭제 완료")
+     */
     @Operation(summary = "메뉴 삭제", description = "메뉴 ID로 메뉴를 삭제합니다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "메뉴 삭제 완료"),
             @ApiResponse(responseCode = "404", description = "메뉴를 찾을 수 없음")
     })
     @DeleteMapping("/deleteMenu")
-    public ResponseEntity<String> deleteMenu(@Parameter(name = "menuId", description = "삭제할 메뉴의 ID", required = true) @RequestParam("menuId") Long menuId) {
+    public ResponseEntity<String> deleteMenu(@Parameter(name = "menuId", description = "삭제할 메뉴의 ID", required = true) @RequestParam("menuId") Integer menuId) {
         menuService.deleteMenu(menuId);
         return ResponseEntity.ok("메뉴 삭제 완료");
     }
 
-
+    /**
+     * 메뉴 조회
+     * 카테고리 ID로 해당 카테고리의 모든 메뉴를 조회
+     *
+     * @param categoryId 조회할 카테고리 ID
+     * @return ResponseEntity.ok(메뉴 리스트)
+     */
     @Operation(
             summary = "메뉴 조회",
             description = "카테코리 ID로 메뉴를 조회합니다.",
@@ -60,7 +86,7 @@ public class MenuController {
     @GetMapping("/getMenu")
     public ResponseEntity<List<MenuEntity>> getMenu(
             @Parameter(name = "categoryId", description = "조회할 카테고리 ID", example = "1")
-            @RequestParam("categoryId") Long categoryId) {
+            @RequestParam("categoryId") Integer categoryId) {
         List<MenuEntity> menus = (List<MenuEntity>) menuService.findMenuByCategory(categoryId);
         return ResponseEntity.ok(menus);
     }

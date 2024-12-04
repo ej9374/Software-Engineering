@@ -66,7 +66,7 @@ public class CategoryController {
     @DeleteMapping("/deleteCategory")
     public ResponseEntity<String> deleteCategory(
             @Parameter(name = "categoryId", description = "삭제할 카테고리의 ID", example = "1")
-            @RequestParam("categoryId") Long categoryId) {
+            @RequestParam("categoryId") Integer categoryId) {
         categoryService.deleteCategory(categoryId);
         return ResponseEntity.ok("카테고리 삭제 완료");
     }
@@ -110,7 +110,7 @@ public class CategoryController {
     @GetMapping("/getCategory")
     public ResponseEntity<CategoryEntity> getCategory(
             @Parameter(name = "categoryId", description = "조회할 카테고리의 ID", example = "1")
-            @RequestParam("categoryId") Long categoryId) {
+            @RequestParam("categoryId") Integer categoryId) {
         CategoryEntity category = categoryService.findCategoryById(categoryId);
         return ResponseEntity.ok(category);
     }

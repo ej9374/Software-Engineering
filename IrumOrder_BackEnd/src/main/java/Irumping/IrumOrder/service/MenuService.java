@@ -16,6 +16,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * 클래스 설명: 메뉴 정보 관리를 제공하는 클래스
+ * 메뉴 정보를 DB에 저장하고 조회한다.
+ *
+ * 작성자: 주영은
+ * 마지막 수정일: 2024-12-04
+ */
 @RequiredArgsConstructor
 @Service
 public class MenuService {
@@ -26,22 +33,14 @@ public class MenuService {
     @PersistenceContext
     private EntityManager em;
 
-
+    /**
+     * 메뉴 생성
+     *
+     * @param menuRequest 메뉴 정보
+     * @return 저장된 메뉴의 ID
+     */
     @Transactional
-    public Long createMenu(MenuRequest menuRequest) {
-//        // 프록시 객체 생성
-//        CategoryEntity category = new CategoryEntity();
-//        em.getReference(CategoryEntity.class, menuRequest.getCategoryId());
-//
-//        // Menu 엔티티 생성 및 연관 관계 설정
-//        MenuEntity newMenu = new MenuEntity();
-//        newMenu.setName(menuRequest.getName());
-//        newMenu.setPrice(menuRequest.getPrice());
-//        newMenu.setCategory(category);
-//
-//        // Menu 저장
-//        menuRepository.saveMenu(newMenu);
-//        return newMenu.getMenuId();
+    public Integer createMenu(MenuRequest menuRequest) {
 
         // DB에서 카테고리 가져오기
         CategoryEntity category = categoryRepositoy.findCategoryById(menuRequest.getCategoryId());
@@ -57,13 +56,27 @@ public class MenuService {
         return menu.getMenuId();
     }
 
+    /**
+     * 메뉴 삭제
+     * 메뉴 ID로 메뉴 정보를 삭제한다.
+     *
+     * @param menuId 삭제할 메뉴의 ID
+     * @return 삭제된 메뉴의 ID
+     */
     @Transactional
-    public Long deleteMenu(Long menuId) {
+    public Integer deleteMenu(Integer menuId) {
         menuRepository.deleteMenu(menuId);
         return menuId;
     }
 
-    public List<MenuEntity> findMenuByCategory(Long categoryId) {
+    /**
+     * 메뉴 조회
+     * 원하는 카테고리에 해당하는 메뉴 정보를 조회한다.
+     *
+     * @param categoryId 조회할 메뉴의 ID
+     * @return 카테고리별 메뉴 정보 리스트
+     */
+    public List<MenuEntity> findMenuByCategory(Integer categoryId) {
         return menuRepository.findByCategory(categoryId);
     }
 

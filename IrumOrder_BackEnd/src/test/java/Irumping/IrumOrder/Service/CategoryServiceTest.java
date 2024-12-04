@@ -1,8 +1,7 @@
-package Irumping.IrumOrder.service;
+package Irumping.IrumOrder.Service;
 
 import Irumping.IrumOrder.entity.CategoryEntity;
-import Irumping.IrumOrder.repository.JpaMenuCategoryRepository;
-import Irumping.IrumOrder.repository.MenuCategoryRepository;
+import Irumping.IrumOrder.service.CategoryService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,7 @@ class CategoryServiceTest {
         String categoryName = "testCategory";
 
         // When
-        Long categoryId = categoryService.createCategory(categoryName);
+        Integer categoryId = categoryService.createCategory(categoryName);
 
         // Then
         CategoryEntity category = categoryService.findCategoryById(categoryId);
