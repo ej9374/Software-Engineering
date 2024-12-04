@@ -46,18 +46,15 @@ public class RoutineService {
      */
     public List<RoutineResponseDto> getRoutinesByUserId(Integer userId) {
         List<RoutineEntity> routines =  routineRepository.findByUserId(userId);
-        return routines.stream().map(routine -> {
-            MenuEntity menu = menuRepository.findMenuById(routine.getMenuId());
-            return new RoutineResponseDto(
-                    routine.getRoutineId(),
-                    routine.getUserId(),
-                    routine.getMenuId(),
-                    menuRepository.findMenuById(routine.getMenuId()).getName(),
-                    routine.getMenuDetailId(),
-                    RoutineDayUtils.fromBitmask(routine.getRoutineDayBitmask()),
-                    routine.getRoutineTime(),
-                    routine.getAlarmEnabled());
-        }).collect(Collectors.toList());
+        return routines.stream().map(routine -> new RoutineResponseDto(
+                routine.getRoutineId(),
+                routine.getUserId(),
+                routine.getMenuId(),
+                menuRepository.findMenuById(routine.getMenuId()).getName(),
+                routine.getMenuDetailId(),
+                RoutineDayUtils.fromBitmask(routine.getRoutineDayBitmask()),
+                routine.getRoutineTime(),
+                routine.getAlarmEnabled())).collect(Collectors.toList());
     }
 
 

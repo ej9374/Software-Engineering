@@ -1,7 +1,6 @@
 package Irumping.IrumOrder.dto;
 
 import Irumping.IrumOrder.entity.RoutineDay;
-import Irumping.IrumOrder.entity.RoutineEntity;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
