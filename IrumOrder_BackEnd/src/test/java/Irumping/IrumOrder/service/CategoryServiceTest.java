@@ -1,7 +1,6 @@
-package Irumping.IrumOrder.Service;
+package Irumping.IrumOrder.service;
 
 import Irumping.IrumOrder.entity.CategoryEntity;
-import Irumping.IrumOrder.service.CategoryService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

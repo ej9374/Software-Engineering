@@ -1,80 +1,62 @@
-package Irumping.IrumOrder.Service;
+package Irumping.IrumOrder.service;
 
-import Irumping.IrumOrder.Dto.LoginDto;
-import Irumping.IrumOrder.Entity.UserEntity;
-import Irumping.IrumOrder.Repository.MockLoginRepository;
-
-import Irumping.IrumOrder.service.AuthService;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.*;
 
+@SpringBootTest
+@Transactional
 class AuthServiceTest {
 
+    @Autowired
     private static AuthService authService;
 
-
-    @BeforeEach
-    public void beforeEach() {
-        authService = new AuthService(new MockLoginRepository());
-    }
-
-    @AfterEach
-    public void afterEach() {
-        authService = null;
-    }
-
+    @DisplayName("Test SignUp")
     @Test
     void signUp() {
         // given
-        UserEntity user = new UserEntity("testId", "testPwd", "testEmail", "testName");
-
-        System.out.println(authService);
-
         // when
-        authService.signUp(user);
+        authService.signUp("testId", "testPwd", "testEmail");
         // then
-        assertThat(authService.login(new LoginDto("testId", "testPwd"))).isTrue();
+        assertThat(authService.login("testId", "testPwd")).isTrue();
     }
 
     @Test
-    void login_success() {
+    void loginSuccess() {
         // given
-        LoginDto loginDto = new LoginDto("testId", "testPwd");
-        authService.signUp(new UserEntity("testId", "testPwd", "testEmail", "testName"));
+        authService.signUp("testId", "testPwd", "testEmail");
 
         // when
-        boolean check = authService.login(loginDto);
+        boolean check = authService.login("testId", "testPwd");
 
         // then
         assertThat(check).isTrue();
     }
 
     @Test
-    void login_fail_wrong_password() {
+    void loginFailNoId() {
         // given
-        LoginDto loginDto = new LoginDto("testId", "testPwd");
-        authService.signUp(new UserEntity("testId", "testPwd", "testEmail", "testName"));
 
         // when
-        boolean check = authService.login(new LoginDto("testId", "wrongPwd"));
+        boolean check = authService.login("testId", "wrongPwd");
 
         // then
         assertThat(check).isFalse();
     }
 
-//    @Test
-//    void login_fail_wrong_id() {
-//        // given
-//        LoginDto loginDto = new LoginDto("testId", "testPwd");
-//        authService.signUp(new UserEntity("testId", "testPwd", "testEmail", "testName"));
-//
-//        // when
-//        boolean check = authService.login(new LoginDto("wrongId", "testPwd"));
-//
-//        // then
-//        assertThat(check).isFalse();
-//    }
+    @Test
+    void loginFailWrongPwd() {
+        // given
+        authService.signUp("testId", "testPwd", "testEmail");
+
+        // when
+        boolean check = authService.login("testId", "wrongPwd");
+
+        // then
+        assertThat(check).isFalse();
+    }
 }
